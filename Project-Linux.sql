@@ -30,15 +30,15 @@ CREATE TABLE `Course` (
   `Campus` varchar(10) NOT NULL DEFAULT '',
   `CourseCode` varchar(6) DEFAULT NULL,
   `Credits` varchar(40) DEFAULT NULL,
-  `Date` int(2) DEFAULT NULL,
+  `Date` varchar(40) DEFAULT NULL,
   `Day` varchar(6) DEFAULT NULL,
   `Faculty` varchar(30) DEFAULT NULL,
   `Room` int(3) DEFAULT NULL,
   `SeatsOpen` int(3) DEFAULT NULL,
-  `Status` int(3) DEFAULT NULL,
-  `Time` int(3) DEFAULT NULL,
-  `Title` int(3) DEFAULT NULL,
-  PRIMARY KEY (`CourseID`)
+  `Status` varchar(40) DEFAULT NULL,
+  `Time` varchar(40) DEFAULT NULL,
+  `Title` varchar(40) DEFAULT NULL,
+  PRIMARY KEY (`Course`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -58,7 +58,7 @@ CREATE TABLE `Student` (
   `FirstName` varchar(20) DEFAULT NULL,
   `LastName` varchar(20) DEFAULT NULL,
   `EmailAddress` varchar(30) DEFAULT NULL,
-  PRIMARY KEY (`StudentID`)
+  PRIMARY KEY (`Student`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 

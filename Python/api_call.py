@@ -2,11 +2,14 @@ import requests
 import json
 import csv
 import re
+import sys
 
 def make_request(size):
+  yearCode = sys.argv[1]
+  termCode = sys.argv[2]
   #this is the URL that the request is sent to
   #this link contains the values for the terms and years. YearCode and TermCode appear at the end, we will need to access these values to handle when the semester changes.
-  url = "https://my.macc.edu/ICS/webserviceproxy/exi/rest/studentregistration/pagedsectiondataforsearch?Id=57&IdNumber=-1&YearCode=2023&TermCode=SP"
+  url = "https://my.macc.edu/ICS/webserviceproxy/exi/rest/studentregistration/pagedsectiondataforsearch?Id=57&IdNumber=-1&YearCode="+ yearCode +"&TermCode=" + termCode
 
   #the payload is what gets sent on the request. Some of the values are not necessary, I have removed them in the C version.
   payload = json.dumps({
@@ -158,7 +161,7 @@ def write_to_csv(json_path, csv_path): #this function is used once the data has 
 
     data_file = open(csv_path, "w", newline="") #this creates/opens a file to write the csv to using the csv_path variable as the file
 
-    csv_writer = csv.writer(data_file) #creating a csv writer in the file
+    csv_writer = csv.writer(data_file, delimiter=";") #creating a csv writer in the file
 
     # Counter variable used for writing
     # headers to the CSV file
@@ -254,7 +257,7 @@ def seperate_scheduling_data(file_path): #this function just calls the schedule 
 ################################
 
 if __name__ == "__main__": #this calls all of the functions in the if statement if the script is the main script. This prevents the functions being called if this script was included in another script. Similar to int main() in C++
-  make_request(15)
+  make_request(25)
   clean_json_file("data.json")
   seperate_scheduling_data("data.json")
   write_to_csv("data.json", "data.csv")

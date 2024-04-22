@@ -3,6 +3,15 @@
 ## Introduction
 Welcome to the Linux Team's repository for the MACC Registration Waitlist system. Our team is responsible for developing and maintaining the Linux-specific components of the system.
 
+## Installation
+The suggested method is to use the automated linux-install script as root:
+
+Warning: Only run scripts you trust, especially when they are sent into bash like this
+
+`# bash <(curl -s https://github.com/MACC-SP24-Systems-Project/Linux-Team/master/linux-install )`
+
+Make sure you change user passwords for the database!
+
 ## System Overview
 Our primary objective is to ensure compatibility and optimal performance on Linux-based environments while adhering to the overall system architecture and requirements specified for the project.
 

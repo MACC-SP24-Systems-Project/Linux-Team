@@ -11,7 +11,7 @@ systemctl enable mariadb
 
 cd /root
 git clone https://github.com/MACC-SP24-Systems-Project/Linux-Team.git
-mariadb -u root -p='' Project-Linux < Linux-Team/Project-Linux.sql
+mariadb -u root -p='' waitlist < Linux-Team/waitlist.sql
 
 echo "Change root and mysql passwords! Syntax: ALTER USER 'user'@'localhost' IDENTIFIED BY 'new_password';"
 

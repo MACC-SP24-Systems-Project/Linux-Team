@@ -16,3 +16,5 @@ mariadb -u root -p='' waitlist < Linux-Team/waitlist.sql
 echo "Change root and mysql passwords! Syntax: ALTER USER 'user'@'localhost' IDENTIFIED BY 'new_password';"
 
 #set up for msmtp coming in future revision
+
+rm -r Linux-Team

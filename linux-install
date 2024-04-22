@@ -1,0 +1,18 @@
+#!/bin/bash
+
+zypper addrepo https://download.opensuse.org/repositories/server:mail/15.5/server:mail.repo
+zypper refresh
+zypper install mariadb git msmtp
+
+mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+
+systemctl start mariadb
+systemctl enable mariadb
+
+cd /root
+git clone https://github.com/MACC-SP24-Systems-Project/Linux-Team.git
+mariadb -u root -p='' Project-Linux < Linux-Team/Project-Linux.sql
+
+echo "Change root and mysql passwords! Syntax: ALTER USER 'user'@'localhost' IDENTIFIED BY 'new_password';"
+
+#set up for msmtp coming in future revision

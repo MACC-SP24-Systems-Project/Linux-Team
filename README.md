@@ -18,11 +18,11 @@ Our primary objective is to ensure compatibility and optimal performance on Linu
 ## Development Environment
 - **Operating System**: Linux distributions (e.g., Ubuntu, CentOS)
 - **Programming Languages**: Python, C++
-- **Frameworks**: Flask (Python), GTK (C++)
+- **Frameworks**: Python, GTK (C++)
 - **Tools**: Visual Studio Code, Git
 
 ## Linux-Specific Components
-- **Server-Side Logic**: Development using Python for backend scripting and Flask framework for web development.
+- **Server-Side Logic**: Development using Python for backend scripting.
 - **Performance-Critical Components**: Implementation in C++ leveraging GTK for Linux GUI development.
 
 ## Contribution Guidelines
